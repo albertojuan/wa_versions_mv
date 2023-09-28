@@ -7,7 +7,7 @@ SQL >
     SELECT
         toDate(timestamp) AS date,
         session_id,
-        anySimpleState(production) AS environment,
+        anySimpleState(environment) AS environment,
         anySimpleState(device) AS device,
         anySimpleState(browser) AS browser,
         anySimpleState(location) AS location,
