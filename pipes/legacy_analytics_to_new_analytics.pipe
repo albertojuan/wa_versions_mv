@@ -16,7 +16,7 @@ SQL >
       payload
     FROM
       analytics_events
-    WHERE timestamp > '2023-09-29 14:30:00'
+    WHERE timestamp > '2023-09-29 15:30:00'
 
 TYPE materialized
 DATASOURCE analytics_events_new
