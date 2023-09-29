@@ -1,0 +1,23 @@
+DESCRIPTION >
+	Pipe to populate analytics
+
+NODE temp_populate_new_analytics_datasource
+DESCRIPTION >
+    Parse raw page_hit events
+
+SQL >
+
+    SELECT
+      timestamp,
+      environment,
+      action,
+      version,
+      session_id,
+      payload
+    FROM
+      analytics_events
+    WHERE timestamp <= '2023-09-29 15:30:00'
+
+TYPE materialized
+DATASOURCE analytics_events_new
+
