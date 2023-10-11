@@ -20,7 +20,7 @@
       params:
         network: 'production'
 
-- no-visits-found:
+- visits-info-is-being-received:
     max_bytes_read: null
     max_time: null
     sql: |
