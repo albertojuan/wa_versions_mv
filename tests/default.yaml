@@ -1,0 +1,33 @@
+- no-visits-without-pageviews:
+    max_bytes_read: null
+    max_time: null
+    sql: |
+      SELECT * FROM kpis
+      WHERE visits = 0 AND pageviews > 0
+    pipe:
+      name: kpis
+      params:
+        network: 'production'
+
+- no-pageviews-without-visits:
+    max_bytes_read: null
+    max_time: null
+    sql: |
+      SELECT * FROM kpis
+      WHERE visits > 0 AND pageviews = 0
+    pipe:
+      name: kpis
+      params:
+        network: 'production'
+
+- visits-info-is-being-received:
+    max_bytes_read: null
+    max_time: null
+    sql: |
+      SELECT 1 FROM kpis
+      WHERE visits > 0
+      HAVING count() = 0
+    pipe:
+      name: kpis
+      params:
+        network: 'production'
